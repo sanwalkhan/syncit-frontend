@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syncit - Set Password</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Include GSAP from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="top-navbar">
+    <nav class="navbar navbar-expand-lg border-bottom px-5">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><span>_</span>Syncit</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact sales</a>
+            </li>
+            <a href="#"><button type="button" class="btn">Log in</button></a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container py-5">
+    <div class="row form-row d-flex align-items-center">
+      <!-- Left Section -->
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <h2>Join millions worldwide who automate their work using Syncit.</h2>
+        <ul class="list-unstyled">
+          <li><span class="check-icon">✔</span> Easy setup, no coding required</li>
+          <li><span class="check-icon">✔</span> Free forever for core features</li>
+          <li><span class="check-icon">✔</span> 14-day trial of premium features & apps</li>
+        </ul>
+      </div>
+
+      <!-- Right Section (Form) -->
+      <div class="col-md-6">
+        <div class="form-container">
+          <a href="sign-up.html">
+            <p>Back</p>
+          </a>
+          <p id="userEmail"></p>
+
+          <form id="passwordForm">
+            <div class="mb-3">
+              <label for="password" class="form-label"><small>* Password</small></label>
+              <input type="password" class="form-control" id="password" required>
+            </div>
+            <div class="password-requirements">
+              <div class="d-flex">
+                <i id="lengthCheck" class="fa-solid fa-xmark mt-1" style="color: #ff0000;"></i>&nbsp;&nbsp;
+                <p>Must be at least 12 characters</p>
+              </div>
+              <div class="d-flex">
+                <i id="letterCheck" class="fa-solid fa-xmark mt-1" style="color: #ff0000;"></i>&nbsp;&nbsp;
+                <p>Must contain at least one letter</p>
+              </div>
+              <div class="d-flex">
+                <i id="consecutiveCheck" class="fa-solid fa-xmark mt-1" style="color: #ff0000;"></i>&nbsp;&nbsp;
+                <p>If under 20 characters, it can't have more than 2 consecutive identical characters.</p>
+              </div>
+            </div>
+
+            <p><small>By signing up, you agree to Syncit <a href="#">terms of service</a> and <a href="#">privacy
+                  policy</a>.</small></p>
+            <button type="submit" class="btn btn-submit mb-3">Get started for free</button>
+            <p class="text-center mb-0"><small>Already have an account? <a href="Login.html">Log In</a></small></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Retrieve user data from localStorage
+    const storedData = JSON.parse(localStorage.getItem('signupData'));
+    if (storedData && storedData.workEmail) {
+      document.getElementById('userEmail').textContent = `You're signing up as ${storedData.workEmail}.`;
+    } else {
+      window.location.href = 'sign-up.html';
+    }
+
+    const passwordInput = document.getElementById('password');
+    const lengthCheck = document.getElementById('lengthCheck');
+    const letterCheck = document.getElementById('letterCheck');
+    const consecutiveCheck = document.getElementById('consecutiveCheck');
+
+    passwordInput.addEventListener('input', validatePassword);
+
+    function validatePassword() {
+      const password = passwordInput.value;
+
+      if (password.length >= 12) {
+        lengthCheck.className = 'fa-solid fa-check mt-1';
+        lengthCheck.style.color = '#00ff00';
+      } else {
+        lengthCheck.className = 'fa-solid fa-xmark mt-1';
+        lengthCheck.style.color = '#ff0000';
+      }
+
+      if (/[a-zA-Z]/.test(password)) {
+        letterCheck.className = 'fa-solid fa-check mt-1';
+        letterCheck.style.color = '#00ff00';
+      } else {
+        letterCheck.className = 'fa-solid fa-xmark mt-1';
+        letterCheck.style.color = '#ff0000';
+      }
+
+      if (password.length >= 20 || !/(.)\1\1/.test(password)) {
+        consecutiveCheck.className = 'fa-solid fa-check mt-1';
+        consecutiveCheck.style.color = '#00ff00';
+      } else {
+        consecutiveCheck.className = 'fa-solid fa-xmark mt-1';
+        consecutiveCheck.style.color = '#ff0000';
+      }
+    }
+
+    document.getElementById('passwordForm').addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const password = document.getElementById('password').value;
+
+      const userData = {
+        ...storedData,
+        password: password
+      };
+
+      try {
+        const apiUrl = 'http://localhost:5000/api/auth/signup';
+
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(userData),
+        });
+
+        if (response.ok) {
+          const responseData = await response.json();
+          const userEmail = storedData.workEmail;
+
+          // Extract user ID from JWT token
+          const token = responseData.token;
+          const base64Url = token.split('.')[1];
+          const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+          const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+          }).join(''));
+
+          const { userId } = JSON.parse(jsonPayload);
+
+          // Store token and extracted user ID
+          localStorage.setItem('authToken', token);
+          localStorage.setItem('userId', userId);
+          localStorage.setItem('userEmail', userEmail);
+          localStorage.removeItem('signupData');
+
+          window.location.href = 'signup-confirmation.html';
+        } else {
+          const errorData = await response.json();
+          alert(`Error: ${errorData.message}`);
+        }
+
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again later.');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

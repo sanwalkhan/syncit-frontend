@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Syncit</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Include GSAP from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="top-navbar">
+        <nav class="navbar navbar-expand-lg border-bottom px-5">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><span>_</span>Syncit</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Products
+                            </a>
+                            <div class="dropdown-menu full-width-dropdown" aria-labelledby="navbarDropdown">
+
+
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <h2 class="sub-heading">Syncit Automation Platform</h2>
+                                            <p class="text-muted">No-code automation across 7,000+ apps</p>
+                                            <!-- Column 1 -->
+                                            <div class="col-md-6 dropdown-column">
+                                                <div class="dropdown-header ps-0">PRODUCTS</div>
+                                                <div class="d-flex">
+                                                    <div class="dropdown-icon text-center">
+                                                        <img class="w-100" src="assets/icons/zaps.png" alt="">
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <a class="dropdown-item p-0" href="#">Zaps</a>
+                                                        <p class="text-muted">Do-it-yourself automation for workflows
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <div class="dropdown-icon text-center">
+                                                        <img class="w-100" src="assets/icons/tables.png" alt="">
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <a class="dropdown-item p-0" href="#">Tables</a>
+                                                        <p class="text-muted">Databases designed for workflows</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <div class="dropdown-icon text-center">
+                                                        <img class="w-100" src="assets/icons/interfaces.png" alt="">
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <a class="dropdown-item p-0" href="#">Interfaces</a>
+                                                        <p class="text-muted">Custom pages to power your workflows</p>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <!-- Column 2 -->
+                                            <div class="col-md-6 dropdown-column">
+                                                <div class="dropdown-header px-0 mb-2">CAPABILITIES</div>
+                                                <a class="dropdown-item px-0" href="#">App Integrations</a>
+                                                <p class="text-muted mb-2">Explore 7,000+ app connections</p>
+                                                <a class="dropdown-item px-0" href="#">AI Automation</a>
+                                                <p class="text-muted mb-2">Cutting-edge AI to upgrade your workflows</p>
+                                                <a class="dropdown-item px-0" href="#">Security</a>
+                                                <p class="text-muted">Enterprise-grade security</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="dropdown-footer d-flex border-top">
+                                                <p class="footer-item">Explore Templates</p>
+                                                <p class="mx-5">Explore use cases</p>
+                                                <p>Join Syncit Early Access</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="row">
+
+                                            <h2 class="sub-heading">What's New</h2>
+                                            <!-- Column 3 -->
+                                            <div class="col-md-12 dropdown-column">
+
+                                                <a class="dropdown-item px-0" href="#">Canvas <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Plan and map your workflows with AI</p>
+                                                <a class="dropdown-item px-0" href="#">Chatbots <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Answer customer questions with AI chatbots</p>
+                                                <a class="dropdown-item px-0" href="#">Central <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Create your own AI assistants for any task</p>
+                                                <a class="dropdown-item px-0" href="#">Functions <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Code your workflows in a web IDE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Solutions
+                            </a>
+                            <div class="dropdown-menu full-width-dropdown" aria-labelledby="navbarDropdown">
+
+
+                                <div class="row">
+                                    <div class="col-md-8 mt-5">
+                                        <div class="row">
+                                            <h2 class="sub-heading">Solutions</h2>
+                                            <p class="text-muted">How Syncit can help you to automate your work across
+                                                teams
+                                            </p>
+                                            <!-- Column 1 -->
+                                            <div class="col-md-4 dropdown-column">
+                                                <div class="dropdown-header ps-0">MY TEAM</div>
+                                                <div class="d-flex">
+                                                    <div class="dropdown-icon text-center">
+                                                        <img class="w-100" src="assets/icons/zaps.png" alt="">
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <a class="dropdown-item p-0" href="#">RevOps </a>
+                                                        <p class="text-muted">Drive revenue through automation</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <div class="dropdown-icon text-center">
+                                                        <img class="w-100" src="assets/icons/tables.png" alt="">
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <a class="dropdown-item p-0" href="#">Marketing</a>
+                                                        <p class="text-muted">Multiply campaign effectiveness and ROI
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <div class="dropdown-icon text-center">
+                                                        <img class="w-100" src="assets/icons/interfaces.png" alt="">
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <a class="dropdown-item p-0" href="#">IT</a>
+                                                        <p class="text-muted">Better manage systems with automation</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <div class="dropdown-icon text-center">
+                                                        <img class="w-100" src="assets/icons/interfaces.png" alt="">
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <a class="dropdown-item p-0" href="#">Sales</a>
+                                                        <p class="text-muted">close more deals</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <div class="dropdown-icon text-center">
+                                                        <img class="w-100" src="assets/icons/interfaces.png" alt="">
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <a class="dropdown-item p-0" href="#">Customer Support</a>
+                                                        <p class="text-muted">Evaluate customer satisfaction</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <div class="dropdown-icon text-center">
+                                                        <img class="w-100" src="assets/icons/interfaces.png" alt="">
+                                                    </div>
+
+                                                    <div class="container">
+                                                        <a class="dropdown-item p-0" href="#">Leaders</a>
+                                                        <p class="text-muted">Streamline decision-making processes</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Column 2 -->
+                                            <div class="col-md-4 dropdown-column by-app">
+                                                <div class="dropdown-header px-0 mb-2">BY APP</div>
+
+                                                <div class="d-flex">
+                                                    <img src="assets/icons/tables.png" alt="">
+                                                    <p>NetSuite</p>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <img src="assets/icons/zaps.png" alt="">
+                                                    <p>Salesforce</p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <img src="assets/icons/tables.png" alt="">
+                                                    <p>HubSpot</p>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <img src="assets/icons/zaps.png" alt="">
+                                                    <p>Slack</p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <img src="assets/icons/tables.png" alt="">
+                                                    <p>OpenAI</p>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <img src="assets/icons/zaps.png" alt="">
+                                                    <p>Microsoft Dynamics CRM</p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <img src="assets/icons/tables.png" alt="">
+                                                    <p>Microsoft Teams</p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <img src="assets/icons/tables.png" alt="">
+                                                    <p>Zendesk</p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <img src="assets/icons/tables.png" alt="">
+                                                    <p>Jira Software Cloud</p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <img src="assets/icons/tables.png" alt="">
+                                                    <p>View all apps</p>
+                                                </div>
+
+                                            </div>
+                                            <!-- Column 3 -->
+                                            <div class="col-md-4 dropdown-column">
+                                                <div class="dropdown-header px-0 mb-2">BY USE CASE</div>
+                                                <a class="dropdown-item px-0" href="#">Lead Management</a>
+                                                <p class="text-muted mb-2">Automate your way to more conversion</p>
+                                                <a class="dropdown-item px-0" href="#">Sales pipline</a>
+                                                <p class="text-muted mb-2">Automate handoffs and streamline sales</p>
+                                                <a class="dropdown-item px-0" href="#">Marketing campaigns</a>
+                                                <p class="text-muted">Boost your marketing campaign's impact</p>
+                                                <a class="dropdown-item px-0" href="#">Customer support</a>
+                                                <p class="text-muted mb-2">Quick route tickets and responses</p>
+                                                <a class="dropdown-item px-0" href="#">Data management</a>
+                                                <p class="text-muted mb-2">Connect app data for more insights</p>
+                                                <a class="dropdown-item px-0" href="#">Project management</a>
+                                                <p class="text-muted">Deliver projects seamlessly</p>
+                                                <a class="dropdown-item px-0" href="#">Tickets and incidents</a>
+                                                <p class="text-muted">Resolve issues and incidents faster</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="dropdown-footer d-flex border-top">
+                                                <p class="footer-item">Explore Templates</p>
+                                                <p class="mx-5">Explore use cases</p>
+                                                <p>Join Syncit Early Access</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 submenu-module">
+                                        <div class="row ">
+
+                                            <h2 class="sub-heading">What's New</h2>
+                                            <!-- Column 3 -->
+                                            <div class="col-md-12 dropdown-column">
+
+                                                <a class="dropdown-item px-0" href="#">Canvas <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Plan and map your workflows with AI</p>
+                                                <a class="dropdown-item px-0" href="#">Chatbots <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Answer customer questions with AI chatbots</p>
+                                                <a class="dropdown-item px-0" href="#">Central <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Create your own AI assistants for any task</p>
+                                                <a class="dropdown-item px-0" href="#">Functions <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Code your workflows in a web IDE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Resources
+                            </a>
+                            <div class="dropdown-menu full-width-dropdown" aria-labelledby="navbarDropdown">
+
+
+                                <div class="row">
+                                    <div class="col-md-9 mt-5">
+                                        <div class="row">
+                                            <h2 class="sub-heading">Resources</h2>
+                                            <p class="text-muted">Educational resources to move your work forward</p>
+                                            <!-- Column 1 -->
+                                            <div class="col-md-4 dropdown-column">
+                                                <div class="dropdown-header px-0 mb-2">AUTOMATION INSPIRATION</div>
+                                                <a class="dropdown-item px-0" href="#">5 things to automate today</a>
+                                                <p class="text-muted mb-2">Popular workflow to save time</p>
+                                                <a class="dropdown-item px-0" href="#">Create custom chatbots</a>
+                                                <p class="text-muted mb-2">build an AI chatbot in minutes</p>
+                                                <a class="dropdown-item px-0" href="#">Webhooks and Syncit</a>
+                                                <p class="text-muted">Connect your favorite apps with Syncit's wenhooks
+                                                </p>
+                                                <a class="dropdown-item px-0" href="#">Customer stories</a>
+                                                <p class="text-muted mb-2">See how businesses grow woth Syncit</p>
+                                                <a class="dropdown-item px-0" href="#">Blog</a>
+                                                <p class="text-muted mb-2">Read all about apps and automation</p>
+                                                <a class="dropdown-item px-0" href="#">Guides</a>
+                                                <p class="text-muted">Go deep with dedicated guidanace</p>
+
+                                            </div>
+
+                                            <!-- Column 2 -->
+                                            <div class="col-md-4 dropdown-column">
+                                                <div class="dropdown-header px-0 mb-2">LEARN TO USE Syncit</div>
+                                                <a class="dropdown-item px-0" href="#">Syncit basics</a>
+                                                <p class="text-muted mb-2">Create your firts zip confidently</p>
+                                                <a class="dropdown-item px-0" href="#">Product tour</a>
+                                                <p class="text-muted mb-2">Take a guided tour of the Syncit platform</p>
+                                                <a class="dropdown-item px-0" href="#">Syncit 101</a>
+                                                <p class="text-muted">Give live support as to learn to use Syncit</p>
+                                                <a class="dropdown-item px-0" href="#">Events and webinars</a>
+                                                <p class="text-muted mb-2">Join live or watch on demand</p>
+                                                <a class="dropdown-item px-0" href="#">Syncit Learn</a>
+                                                <p class="text-muted mb-2">Online course to learn at your own pace</p>
+
+                                            </div>
+                                            <!-- Column 3 -->
+                                            <div class="col-md-4 dropdown-column">
+                                                <div class="dropdown-header px-0 mb-2">GET HELP</div>
+                                                <a class="dropdown-item px-0" href="#">Help Center</a>
+                                                <p class="text-muted mb-2">Find answers to your questions</p>
+                                                <a class="dropdown-item px-0" href="#">Hire a Syncit Expert</a>
+                                                <p class="text-muted mb-2">Find a certified consultant to help you do
+                                                    more
+                                                </p>
+                                                <a class="dropdown-item px-0" href="#">Syncit Community</a>
+                                                <p class="text-muted">Connect with and learn from other Syncit users</p>
+                                                <a class="dropdown-item px-0" href="#">Support Services</a>
+                                                <p class="text-muted mb-2">Support for your automation journey</p>
+                                                <a class="dropdown-item px-0" href="#">Syncit Support</a>
+                                                <p class="text-muted mb-2">Get help and research support options for
+                                                    every
+                                                    budget</p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-3 submenu-module">
+                                        <div class="row ">
+
+                                            <h2 class="sub-heading">What's New</h2>
+                                            <!-- Column 3 -->
+                                            <div class="col-md-12 dropdown-column">
+
+                                                <a class="dropdown-item px-0" href="#">Canvas <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Plan and map your workflows with AI</p>
+                                                <a class="dropdown-item px-0" href="#">Chatbots <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Answer customer questions with AI chatbots</p>
+                                                <a class="dropdown-item px-0" href="#">Central <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Create your own AI assistants for any task</p>
+                                                <a class="dropdown-item px-0" href="#">Functions <span
+                                                        class="badge bg-secondary">Beta</span></a>
+                                                <p class="text-muted">Code your workflows in a web IDE</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Enterprise</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Prices</a>
+                        </li>
+
+
+                    </ul>
+
+
+                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact sales</a>
+                        </li>
+
+                        <a href="Login.html"><button type="button" class="btn">Log in</button></a>
+                        <a href="sign-up.html"><button type="button" class="btn btn-signup rounded-5">Sign up</button></a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- navbar End -->
+
+    <!-- main section starts-->
+    <section id="main-section">
+
+        <div class="row  g-0 m-0">
+            <div class="col-lg-6 px-5 mt-5">
+                <div class="new mb-4">
+                    <button type="button" class="btn btn-new"><span>New</span> Syncit Enterprise is here</button>
+                </div>
+
+                <div class="main-heading">
+                    <h1>Automate without limits</h1>
+                </div>
+
+                <p class="mb-5">Turn chaos into smooth operations by automating workflows yourself—no developers, no IT
+                    tickets, no delays. The only limit is your imagination.</p>
+                <button type="button" class="btn start-email">Start free with email</button>
+                <button type="button" class="btn start-google">Start free with Google</button>
+            </div>
+
+            <div class="col-lg-6 mt-5">
+                <img src="https://res.cloudinary.com/zapier-media/image/upload/q_auto/f_auto/v1726210651/Homepage%20%E2%80%94%20Sept%202024/homepage-hero_vvpkmi.png"
+                    width="90%" alt="">
+            </div>
+        </div>
+
+    </section>
+    <!-- main section End-->
+
+    <section id="Services" class="mt-5">
+        <div class="text-center">WHAT WILL YOU AUTOMATE TODAY?</div>
+        <!-- Carousel -->
+        <div class="custom-carousel-container mt-4">
+            <div class="custom-carousel-inner">
+                <!-- Carousel Items (5 cards) -->
+                <div class="custom-carousel-item d-flex flex-column">
+                    <h5 class="">Lead Management</h5>
+                    <div class="card border-0  mt-4 ">
+                        <img src="assets/images/card_lead-management.png" alt="Card 1">
+                    </div>
+                </div>
+                <div class="custom-carousel-item d-flex flex-column">
+                    <h5 class="">Revops</h5>
+                    <div class="card border-0  mt-4 ">
+                        <img src="assets/images/card_revops.png" alt="Card 2">
+                    </div>
+                </div>
+                <div class="custom-carousel-item d-flex flex-column">
+                    <h5 class="">Sales Handoff</h5>
+                    <div class="card border-0  mt-4 ">
+                        <img src="assets/images/card_sales-handoffs.png" alt="Card 3">
+                    </div>
+                </div>
+                <div class="custom-carousel-item d-flex flex-column">
+                    <h5 class="">Marketings Campaigns</h5>
+                    <div class="card border-0  mt-4 ">
+                        <img src="assets/images/card_marketing-campaigns.png" alt="Card 1">
+                    </div>
+                </div>
+                <div class="custom-carousel-item d-flex flex-column">
+                    <h5 class="">Data Management</h5>
+                    <div class="card border-0  mt-4 ">
+                        <img src="assets/images/card_support-tickets.png" alt="Card 1">
+                    </div>
+                </div>
+
+                <!-- Duplicate Items for Infinite Scrolling -->
+
+                <div class="custom-carousel-item d-flex flex-column">
+                    <h5 class="">Lead Management</h5>
+                    <div class="card border-0  mt-4 ">
+                        <img src="assets/images/card_lead-management.png" alt="Card 1">
+                    </div>
+                </div>
+                <div class="custom-carousel-item d-flex flex-column">
+                    <h5 class="">Revops</h5>
+                    <div class="card border-0  mt-4 ">
+                        <img src="assets/images/card_revops.png" alt="Card 2">
+                    </div>
+                </div>
+                <div class="custom-carousel-item d-flex flex-column">
+                    <h5 class="">Sales Handoff</h5>
+                    <div class="card border-0  mt-4 ">
+                        <img src="assets/images/card_sales-handoffs.png" alt="Card 3">
+                    </div>
+                </div>
+                <div class="custom-carousel-item d-flex flex-column">
+                    <h5 class="">Marketings Campaigns</h5>
+                    <div class="card border-0  mt-4 ">
+                        <img src="assets/images/card_marketing-campaigns.png" alt="Card 1">
+                    </div>
+                </div>
+                <div class="custom-carousel-item d-flex flex-column">
+                    <h5 class="">Data Management</h5>
+                    <div class="card border-0  mt-4 ">
+                        <img src="assets/images/card_support-tickets.png" alt="Card 1">
+                    </div>
+                </div>
+                <!-- <div class="custom-carousel-item">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/200" alt="Card 1">
+                        <h5>Card 1</h5>
+                        <p>Example text for card 1.</p>
+                    </div>
+                </div>
+                <div class="custom-carousel-item">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/200" alt="Card 2">
+                        <h5>Card 2</h5>
+                        <p>Example text for card 2.</p>
+                    </div>
+                </div>
+                <div class="custom-carousel-item">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/200" alt="Card 3">
+                        <h5>Card 3</h5>
+                        <p>Example text for card 3.</p>
+                    </div>
+                </div>
+                <div class="custom-carousel-item">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/200" alt="Card 4">
+                        <h5>Card 4</h5>
+                        <p>Example text for card 4.</p>
+                    </div>
+                </div>
+                <div class="custom-carousel-item">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/200" alt="Card 5">
+                        <h5>Card 5</h5>
+                        <p>Example text for card 5.</p>
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="custom-carousel-control-prev">&#10094;</button>
+            <button class="custom-carousel-control-next">&#10095;</button>
+        </div>
+    </section>
+
+
+    <!-- Compaines start -->
+    <section id="companies" class="my-5">
+        <div class="text-center">
+            <p class="mb-5">More than 2.2 million companies worldwide already trust Syncit</p>
+        </div>
+        <div class="scrolling-text-container">
+            <div class="scrolling-text">
+                <span class="text-item">Ruggable</span>
+                <span class="text-item">Canva</span>
+                <span class="text-item">Gramarly</span>
+                <span class="text-item">Asana</span>
+                <span class="text-item">Hudl</span>
+            </div>
+            <div class="scrolling-text">
+                <span class="text-item">Webflow</span>
+                <span class="text-item">Okta</span>
+                <span class="text-item">Lyft</span>
+                <span class="text-item"> Sysco</span>
+                <span class="text-item">Casper</span>
+                <span class="text-item">Lululemon</span>
+                <span class="text-item">Hello Fresh</span>
+            </div>
+        </div>
+    </section>
+    <!-- companies End -->
+
+    <section id="workflow-video mt-5" class="bg-secondary">
+
+        <div class="section-heading">
+            <h1 class="main-heading text-center mt-5">Build powerful workflows incredibly fast</h1>
+            <p class="px-5 text-center">Whether you're a team of one or a thousand, Syncit puts the power of automation
+                in your hands—no coding required. Take your workflows to the next level with our suite of automation
+                tools.
+            </p>
+        </div>
+        <div class="video-container text-center my-5 mx-5 ">
+            <video class="" width="100%">
+                <source src="assets/videos/workflow-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="middle-nav bg-light pb-5">
+                <div class="navbar-container middle-navbar">
+                    <ul class="navbar ">
+                        <li class="nav-item active" onclick="changeContent('Connect')">Connect</li>
+                        <li class="nav-item" onclick="changeContent('Automate')">Automate</li>
+                        <li class="nav-item" onclick="changeContent('Power with AI')">Power with AI</li>
+                        <li class="nav-item" onclick="changeContent('Customize')">Customize</li>
+                        <li class="nav-item" onclick="changeContent('Visualize')">Visualize</li>
+                        <li class="nav-item" onclick="changeContent('Scale')">Scale</li>
+                    </ul>
+                </div>
+
+                <div class="content">
+                    <p>Start an automation by connecting two apps — a trigger and an action. Syncit integrates instantly
+                        with over 7,000 different apps.</p>
+                </div>
+                <a href="">
+                    <p>Explore 700+ apps</p>
+                </a>
+            </div>
+        </div>
+
+        <section id="products">
+            <p class="text-center mb-5">Meet our Automation Products</p>
+            <div class="container-fluid my-3 px-5">
+                <div class="row g-4">
+                    <!-- Card 1 -->
+                    <div class="col-md-4">
+                        <div class="custom-card d-flex flex-column h-100">
+                            <h5><span class="custom-card-icon">⚡</span>Zaps</h5>
+                            <p>Automate advanced workflows with the full building power of Syncit.</p>
+                            <a href="#" class="explore-link">Explore Zaps →</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-4">
+                        <div class="custom-card d-flex flex-column h-100">
+                            <h5><span class="custom-card-icon">🔲</span>Interfaces</h5>
+                            <p>Build professional apps, forms, and web pages that easily connect to your Zaps and
+                                Tables.</p>
+                            <a href="#" class="explore-link">Explore Interfaces →</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-4">
+                        <div class="custom-card d-flex flex-column h-100">
+                            <h5><span class="custom-card-icon">📊</span>Tables</h5>
+                            <p>Get more storage and control of the data that powers your automated workflows.</p>
+                            <a href="#" class="explore-link">Explore Tables →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </section>
+
+    <section id="category">
+        <!-- Filter Menu -->
+        <div class="d-flex flex-wrap gap-2 mb-4">
+            <button class="btn filter-btn active" data-category="all">All</button>
+            <button class="btn filter-btn" data-category="ai">AI automation</button>
+            <button class="btn filter-btn" data-category="lead">Lead management</button>
+            <button class="btn filter-btn" data-category="sales">Sales</button>
+            <button class="btn filter-btn" data-category="marketing">Marketing</button>
+            <button class="btn filter-btn" data-category="support">Support</button>
+            <button class="btn filter-btn" data-category="finance">Finance</button>
+            <button class="btn filter-btn" data-category="hr">HR</button>
+        </div>
+
+        <!-- Card Container -->
+        <div class="row row-cols-1 row-cols-md-3 g-0 ">
+            <div class="col card-item" data-category="ai">
+                <div class="card h-100">
+                    <img src="assets/images/category-card-1.avif" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Draft Email replies to customers</h5>
+
+                        <a href="#" class="card-link">Get started →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col card-item" data-category="lead">
+                <div class="card h-100">
+                    <img src="assets/images/category-card-1.avif" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Draft Email replies to customers</h5>
+
+                        <a href="#" class="card-link">Get started →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col card-item" data-category="hr">
+                <div class="card h-100">
+                    <img src="assets/images/category-card-1.avif" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Draft Email replies to customers</h5>
+
+                        <a href="#" class="card-link">Get started →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col card-item" data-category="sales">
+                <div class="card h-100">
+                    <img src="assets/images/category-card-1.avif" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Draft Email replies to customers</h5>
+
+                        <a href="#" class="card-link">Get started →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col card-item" data-category="marketing">
+                <div class="card h-100">
+                    <img src="assets/images/category-card-1.avif" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Draft Email replies to customers</h5>
+
+                        <a href="#" class="card-link">Get started →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col card-item" data-category="support">
+                <div class="card h-100">
+                    <img src="assets/images/category-card-1.avif" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Draft Email replies to customers</h5>
+
+                        <a href="#" class="card-link">Get started →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col card-item" data-category="finance">
+                <div class="card h-100">
+                    <img src="assets/images/category-card-1.avif" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Draft Email replies to customers</h5>
+
+                        <a href="#" class="card-link">Get started →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
