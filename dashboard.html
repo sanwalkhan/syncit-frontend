@@ -513,6 +513,28 @@
 
         // Fetch user profile on page load
         fetchUserProfile();
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Assuming the authToken is already stored in sessionStorage or elsewhere, for example:
+            const authToken = sessionStorage.getItem('authToken'); // Or any other method to get the token
+
+            if (authToken) {
+                // Store authToken in localStorage for persistence across pages
+                localStorage.setItem('authToken', authToken);
+            } else {
+                // If the token doesn't exist, you could handle it by redirecting or showing an error
+                console.error('Auth token not found!');
+                return;
+            }
+
+            // Redirect to create.html when the button is clicked
+            document.getElementById('goToCreate').addEventListener('click', () => {
+                window.location.href = 'create.html';  // Redirect to the create page
+            });
+        });
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

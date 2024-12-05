@@ -148,6 +148,11 @@
               console.log('localStorage cleared');
               checkLocalStorage();
 
+              localStorage.setItem('authToken', data.token);
+
+              // Log the token to the browser console
+              console.log('JWT Token:', data.token);
+
               // Display success message
               errorMessageElement.textContent = 'Email verified successfully. Redirecting...';
               errorMessageElement.style.display = "block";

@@ -122,8 +122,7 @@
           // Login successful, store JWT token in localStorage
           localStorage.setItem('authToken', data.token);
           alert('Login successful');
-          // Redirect to dashboard or main page after successful login
-          window.location.href = 'dashboard.html';  // Change this to the actual dashboard URL
+          window.location.href = 'dashboard.html';
         } else {
           // Login failed, display error message
           alert(data.message || 'Login failed');
